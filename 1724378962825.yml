@@ -1,0 +1,18 @@
+proxies:
+  - name: "Socks5Proxy"  # 这是您的Socks5代理的名称
+    type: socks5
+    server: 45.32.95.97  # 你的VPS IP地址
+    port: 8088           # 你在Dante中配置的端口
+    username: "aaaa"     # 如果没有设置认证，留空
+    password: "aaaa"     # 如果没有设置认证，留空
+
+proxy-groups:
+  - name: "ProxyGroup"   # 这是一个代理组，可以包含多个代理
+    type: select
+    proxies:
+      - "Socks5Proxy"    # 引用上面定义的Socks5代理
+      - "DIRECT"         # 允许直接连接
+
+
+
+
